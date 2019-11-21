@@ -254,10 +254,18 @@ class APlayer {
         }
         this.template.listCurs[index] && (this.template.listCurs[index].style.backgroundColor = color);
         if (index === this.list.index) {
-            this.template.pic.style.backgroundColor = color;
-            this.template.played.style.background = color;
-            this.template.thumb.style.background = color;
-            this.template.volume.style.background = color;
+            if (this.template.pic) {
+                this.template.pic.style.backgroundColor = color;
+            }
+            if (this.template.played) {
+                this.template.played.style.background = color;
+            }
+            if (this.template.thumb) {
+                this.template.thumb.style.background = color;
+            }
+            if (this.template.volume) {
+                this.template.volume.style.background = color;
+            }
         }
     }
 
@@ -282,7 +290,9 @@ class APlayer {
             setTimeout(() => {
                 this.template.button.innerHTML = Icons.pause;
             }, 100);
-            this.template.skipPlayButton.innerHTML = Icons.pause;
+            if (this.template.skipPlayButton) {
+                this.template.skipPlayButton.innerHTML = Icons.pause;
+            }
         }
 
         this.timer.enable('loading');
@@ -320,7 +330,9 @@ class APlayer {
             setTimeout(() => {
                 this.template.button.innerHTML = Icons.play;
             }, 100);
-            this.template.skipPlayButton.innerHTML = Icons.play;
+            if (this.template.skipPlayButton) {
+                this.template.skipPlayButton.innerHTML = Icons.play;
+            }
         }
 
         this.container.classList.remove('aplayer-loading');

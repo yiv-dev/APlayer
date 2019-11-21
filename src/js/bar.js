@@ -1,9 +1,15 @@
 class Bar {
     constructor(template) {
         this.elements = {};
-        this.elements.volume = template.volume;
-        this.elements.played = template.played;
-        this.elements.loaded = template.loaded;
+        if (template.volume) {
+            this.elements.volume = template.volume;
+        }
+        if (template.played) {
+            this.elements.played = template.played;
+        }
+        if (template.loaded) {
+            this.elements.loaded = template.loaded;
+        }
     }
 
     /**
@@ -16,11 +22,13 @@ class Bar {
     set(type, percentage, direction) {
         percentage = Math.max(percentage, 0);
         percentage = Math.min(percentage, 1);
-        this.elements[type].style[direction] = percentage * 100 + '%';
+        if (this.elements[type]) {
+            this.elements[type].style[direction] = percentage * 100 + '%';
+        }
     }
 
     get(type, direction) {
-        return parseFloat(this.elements[type].style[direction]) / 100;
+        return type ? parseFloat(this.elements[type].style[direction]) / 100 : null;
     }
 }
 

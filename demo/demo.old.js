@@ -4,7 +4,6 @@ const ap1 = new APlayer({
     autoplay: false,
     lrcType: false,
     mutex: true,
-    nbc: true,
     preload: 'metadata',
     audio: [{
         name: '光るなら',

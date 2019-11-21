@@ -5,6 +5,7 @@ export default (options) => {
         mini: options.narrow || options.fixed || false,
         fixed: false,
         autoplay: false,
+        nbc: false,
         mutex: true,
         lrcType: options.showlrc || options.lrc || 0,
         preload: 'metadata',

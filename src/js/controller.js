@@ -19,12 +19,18 @@ class Controller {
     }
 
     initPlayButton() {
+        if (!this.player.template.pic) {
+            return;
+        }
         this.player.template.pic.addEventListener('click', () => {
             this.player.toggle();
         });
     }
 
     initPlayBar() {
+        if (!this.player.template.barWrap) {
+            return;
+        }
         const thumbMove = (e) => {
             let percentage = ((e.clientX || e.changedTouches[0].clientX) - this.player.template.barWrap.getBoundingClientRect().left) / this.player.template.barWrap.clientWidth;
             percentage = Math.max(percentage, 0);
@@ -53,6 +59,9 @@ class Controller {
     }
 
     initVolumeButton() {
+        if (!this.player.template.volumeButton) {
+            return;
+        }
         this.player.template.volumeButton.addEventListener('click', () => {
             if (this.player.audio.muted) {
                 this.player.volume(this.player.audio.volume, true);
@@ -88,6 +97,9 @@ class Controller {
     }
 
     initOrderButton() {
+        if (!this.player.template.order) {
+            return;
+        }
         this.player.template.order.addEventListener('click', () => {
             if (this.player.options.order === 'list') {
                 this.player.options.order = 'random';
@@ -100,6 +112,9 @@ class Controller {
     }
 
     initLoopButton() {
+        if (!this.player.template.loop) {
+            return;
+        }
         this.player.template.loop.addEventListener('click', () => {
             if (this.player.list.audios.length > 1) {
                 if (this.player.options.loop === 'one') {
@@ -125,18 +140,27 @@ class Controller {
     }
 
     initMenuButton() {
+        if (!this.player.template.menu) {
+            return;
+        }
         this.player.template.menu.addEventListener('click', () => {
             this.player.list.toggle();
         });
     }
 
     initMiniSwitcher() {
+        if (!this.player.template.miniSwitcher) {
+            return;
+        }
         this.player.template.miniSwitcher.addEventListener('click', () => {
             this.player.setMode(this.player.mode === 'mini' ? 'normal' : 'mini');
         });
     }
 
     initSkipButton() {
+        if (!this.player.template.skipBackButton) {
+            return;
+        }
         this.player.template.skipBackButton.addEventListener('click', () => {
             this.player.skipBack();
         });
@@ -149,6 +173,9 @@ class Controller {
     }
 
     initLrcButton() {
+        if (!this.player.template.lrcButton) {
+            return;
+        }
         this.player.template.lrcButton.addEventListener('click', () => {
             if (this.player.template.lrcButton.classList.contains('aplayer-icon-lrc-inactivity')) {
                 this.player.template.lrcButton.classList.remove('aplayer-icon-lrc-inactivity');

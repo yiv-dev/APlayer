@@ -1,7 +1,7 @@
 {
-    "name": "aplayer",
-    "version": "1.10.1",
-    "description": "Wow, such a beautiful html5 music player",
+    "name": "nbcplayer",
+    "version": "1.0.1",
+    "description": "The fork of aplayer for custom needs",
     "main": "dist/APlayer.min.js",
     "style": "dist/APlayer.min.css",
     "scripts": {
@@ -17,7 +17,7 @@
         "dist"
     ],
     "repository": {
-        "url": "git+https://github.com/DIYgod/APlayer.git",
+        "url": "git+https://github.com/yiv-dev/APlayer.git",
         "type": "git"
     },
     "keywords": [
@@ -31,9 +31,9 @@
     "author": "DIYgod",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/DIYgod/APlayer/issues"
+        "url": "https://github.com/yiv-dev/APlayer.git/issues"
     },
-    "homepage": "https://github.com/DIYgod/APlayer#readme",
+    "homepage": "https://github.com/yiv-dev/APlayer.git#readme",
     "devDependencies": {
         "@babel/core": "^7.6.0",
         "@babel/preset-env": "^7.4.5",
